@@ -5,7 +5,7 @@ import User from "./model/user.model";
 import bcrypt from "bcryptjs";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  providers: [
+  providers: [ 
     Credentials({
       credentials: {
         email: { label: "Email", type: "email" },
