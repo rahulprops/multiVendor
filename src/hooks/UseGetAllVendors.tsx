@@ -1,26 +1,24 @@
-'use client'
 import { AppDispatch } from '@/redux/store';
-import { setUserData } from '@/redux/userSlice';
+import { setAllVendorData } from '@/redux/vendorSlice';
 import axios from 'axios';
 import  { useEffect } from 'react'
 import { useDispatch } from 'react-redux';
 
-const UseGetCurrentUser = () => {
-    const dispatch = useDispatch<AppDispatch>()
+const UseGetAllVendors = () => {
+  const dispatch = useDispatch<AppDispatch>()
      useEffect(()=>{
          const fetchUser = async ()=>{
             try {
                const result = await axios.get("/api/user/currentUser")
             //    console.log(result.data)
-            dispatch(setUserData(result.data))  
+            dispatch(setAllVendorData(result.data))  
             } catch (error) {
                  console.log(error)
-                 dispatch(setUserData(null))
+                 dispatch(setAllVendorData(null))
             }
          }
          fetchUser()
      },[dispatch])
- 
 }
 
-export default UseGetCurrentUser
+export default UseGetAllVendors
