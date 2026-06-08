@@ -9,12 +9,13 @@ const UseGetAllVendors = () => {
      useEffect(()=>{
          const fetchUser = async ()=>{
             try {
-               const result = await axios.get("/api/user/currentUser")
-            //    console.log(result.data)
+               const result = await axios.get("/api/vendor/allVendors")
+               console.log("hooke")
+               console.log("vendorsall" , result.data)
             dispatch(setAllVendorData(result.data))  
             } catch (error) {
                  console.log(error)
-                 dispatch(setAllVendorData(null))
+                 dispatch(setAllVendorData([]))
             }
          }
          fetchUser()

@@ -7,10 +7,10 @@ export async function GET() {
     await connectDb();
     const vendors = await User.find({ role: "vendor" })
   .sort({ createdAt: -1 })
-  .populate({
-    path: "venderProducts",
-    select: "title price image1 category verificationStatus description isActive",
-  });
+  // .populate({
+  //   path: "vendorProducts",
+  //   select: "title price image1 category verificationStatus description isActive",
+  // });
     if (!vendors) {
       return NextResponse.json(
         {
