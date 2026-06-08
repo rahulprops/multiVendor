@@ -39,7 +39,7 @@ function Register (){
       // ✅ Success UX
       alert(data.message || "Account created successfully");
 
-      // 👉 optional: auto redirect
+      // 👉 optional: auto redirect 
       router.push("/login");
 
       // 👉 optional: reset form
