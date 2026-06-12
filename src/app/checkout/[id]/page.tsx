@@ -1,7 +1,7 @@
 'use client'
 import axios from 'axios'
 import { motion } from 'motion/react'
-import { tr } from 'motion/react-m'
+
 import Image from 'next/image'
 import { useParams, useRouter } from 'next/navigation'
 
